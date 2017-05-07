@@ -1,3 +1,5 @@
-<p>
-  header works!
-</p>
+<md-toolbar color="primary" class="mat-elevation-z5">
+  <span>Couch IRC</span>
+  <span class="app-toolbar-filler"></span>
+  <a *ngIf="showSettings()" routerLink="/settings"><button md-icon-button><md-icon>settings</md-icon></button></a>
+</md-toolbar>

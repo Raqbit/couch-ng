@@ -7,6 +7,10 @@ import { AppComponent } from './app.component';
 
 import 'hammerjs';
 
+import { CoreModule } from 'app/core/core.module';
+import { AppRoutingModule } from 'app/app-routing.module';
+import { AuthService } from 'app/auth/auth.service';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -14,9 +18,11 @@ import 'hammerjs';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    CoreModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

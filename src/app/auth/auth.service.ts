@@ -5,4 +5,8 @@ export class AuthService {
 
   constructor() { }
 
+  get authenticated() {
+    return false;
+  }
+
 }

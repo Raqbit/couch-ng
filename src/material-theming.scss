@@ -18,3 +18,7 @@ body{
   padding: 0px;
   background-color: mat-color($dark-background);
 }
+
+a {
+  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
+}
