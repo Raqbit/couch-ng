@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Route } from '@angular/router';
 import { HeaderComponent } from 'app/core/header/header.component';
-import { HomeGuardService } from 'app/home-guard.service';
+import { LoginGuardService } from 'app/login-guard.service';
 import { LoginComponent } from 'app/auth/login/login.component';
+import { RouterModule, Route } from '@angular/router';
 
 const appRoutes: Route[] = [
-  { path: '', loadChildren: './chat-window/chat-window.module#ChatWindowModule', canLoad: [HomeGuardService], pathMatch: 'full' },
-  { path: 'login', component: LoginComponent, canActivate: [HomeGuardService] }
+  { path: '', loadChildren: './chat-window/chat-window.module#ChatWindowModule', canLoad: [LoginGuardService], pathMatch: 'full' },
+  { path: 'login', component: LoginComponent, canActivate: [LoginGuardService] },
+  { path: 'settings', loadChildren: './settings/settings.module#SettingsModule', canLoad: [LoginGuardService], pathMatch: 'full' },
 
 ];
 
@@ -16,11 +17,9 @@ const appRoutes: Route[] = [
     CommonModule,
     RouterModule.forRoot(appRoutes)
   ],
-  declarations: [
-    LoginComponent
-  ],
+  declarations: [],
   providers: [
-    HomeGuardService
+    LoginGuardService
   ],
   exports: [RouterModule]
 })

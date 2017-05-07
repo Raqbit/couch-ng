@@ -1,16 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './header/header.component';
-import { MdToolbarModule, MdIconModule, MdButtonModule } from '@angular/material';
+import { MdToolbarModule, MdIconModule, MdButtonModule, MdCardModule } from '@angular/material';
+import { LoginComponent } from 'app/auth/login/login.component';
+import { HeaderComponent } from 'app/core/header/header.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
+    RouterModule,
     MdToolbarModule,
     MdIconModule,
-    MdButtonModule
+    MdButtonModule,
+    MdCardModule
   ],
-  declarations: [HeaderComponent],
+  declarations: [
+    HeaderComponent,
+    LoginComponent
+  ],
   exports: [
     HeaderComponent
   ]
