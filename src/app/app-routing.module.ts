@@ -9,6 +9,7 @@ const appRoutes: Route[] = [
   { path: '', loadChildren: './chat-window/chat-window.module#ChatWindowModule', canLoad: [LoginGuardService], pathMatch: 'full' },
   { path: 'login', component: LoginComponent, canActivate: [LoginGuardService] },
   { path: 'settings', loadChildren: './settings/settings.module#SettingsModule', canLoad: [LoginGuardService], pathMatch: 'full' },
+  { path: '**', redirectTo: '' },
 
 ];
 

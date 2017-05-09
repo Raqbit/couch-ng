@@ -2,6 +2,7 @@ import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { SettingsComponent } from './settings.component';
+import { MdCardModule } from '@angular/material';
 
 const settingsRoutes: Routes = [
   { path: '', component: SettingsComponent }
@@ -10,7 +11,8 @@ const settingsRoutes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(settingsRoutes)
+    RouterModule.forChild(settingsRoutes),
+    MdCardModule
   ],
   declarations: [SettingsComponent],
 })
